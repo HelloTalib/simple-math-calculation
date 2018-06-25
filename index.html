@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>js</title>
+</head>
+<body>
+	<br>
+	<br>
+	<br>
+	<center>
+		<h1 id="demo">
+			<script>
+				var numOne =Math.floor(Math.random( )*10) + 4;
+				var numTwo =Math.floor(Math.random( )*10) + 4;
+				document.write(numOne + " + " + numTwo);
+				var correctAnswer = numOne + numTwo;
+			</script>
+		</h1>
+		<p>Hello, Please enter Your answer</p>
+		<input type="text" id="input">
+		<button type="button" onclick="myFunction();">Click Me</button>
+		<button type="button" onclick="reloadBtn();">Get A New Card</button>
+		<p id="output"></p>
+	</center>
+	<script>
+		function myFunction() {
+			var input = document.getElementById('input').value;
+			isNaN(input);
+			if (isNaN(input)) {
+				document.getElementById('output').innerHTML = ("Hey! that's not A number" + " : " + input);
+			} else if (input == correctAnswer) {
+				document.getElementById('output').innerHTML = ('Correct');
+			} else {
+					document.getElementById('output').innerHTML = ('Wrong try Again !');
+			}
+}
+function reloadBtn() {
+	document.getElementById('output').innerHTML = "";
+	document.getElementById('input').value ="";
+	numOne =Math.floor(Math.random( )*10) + 4;
+	numTwo =Math.floor(Math.random( )*10) + 4;
+	document.getElementById('demo').innerHTML =numOne + " + " + numTwo;
+	correctAnswer = numOne + numTwo;
+}
+	</script>
+</body>
+</html>
